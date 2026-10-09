@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso Excel Básico | Presentación</title>
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --accent-teal: #0d9488;
+            --accent-teal-light: #2dd4bf;
+            --accent-blue: #38bdf8;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--accent-teal);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(13, 148, 136, 0.18);
+            color: var(--accent-teal-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            border: 1px solid var(--accent-teal);
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(2.1rem, 3vw, 3rem);
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .objective-box {
+            background-color: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid var(--accent-blue);
+            border-radius: 6px;
+            padding: 14px 18px;
+            color: var(--text-muted);
+            font-size: 0.96rem;
+        }
+
+        .objective-box strong {
+            color: var(--text-light);
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .nav a, .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.2s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .nav a {
+            background-color: var(--bg-card);
+            color: var(--text-light);
+        }
+
+        .nav a:hover, .btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-teal);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);
+            color: #03131d;
+            box-shadow: 0 8px 18px rgba(13, 148, 136, 0.25);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--text-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+            min-height: 180px;
+            transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            background-color: var(--bg-card-hover);
+            border-color: var(--accent-teal);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+        }
+
+        .card .meta {
+            display: inline-block;
+            color: var(--accent-teal-light);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .download-list {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .download-list li {
+            background-color: rgba(15, 23, 42, 0.45);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .download-list strong {
+            color: var(--text-light);
+            font-size: 0.98rem;
+        }
+
+        .download-list span {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        .file-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 12px;
+            border-radius: 8px;
+            background: rgba(45, 212, 191, 0.12);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal-light);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .file-link:hover {
+            background: rgba(45, 212, 191, 0.2);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(56,189,248,0.12));
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .quote-box p {
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(13, 148, 136, 0.2);
+            color: var(--accent-teal-light);
+            border: 1px solid var(--accent-teal);
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 24px 14px;
+            }
+
+            header {
+                padding: 24px 18px;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav a, .btn {
+                width: 100%;
+            }
+
+            .download-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="tag">Curso de Excel · Sesión 1</span>
+            <h1>Excel Básico Aplicado al Entorno Laboral</h1>
+            <div class="subtitle">De datos caóticos a reportes confiables</div>
+            <div class="objective-box">
+                <strong>Objetivo:</strong> Aprender a limpiar, organizar y visualizar información para tomar decisiones más rápidas y seguras en el trabajo diario.
+            </div>
+        </header>
+
+        <nav class="nav" aria-label="Navegación principal">
+            <a href="#materiales">Material</a>
+            <a href="temario.html">Temario</a>
+            <a href="#actividades">Actividades</a>
+            <a href="sesion1/sesion.html" target="_blank" class="btn btn-primary">Abrir sesión</a>
+        </nav>
+
+        <section id="materiales">
+            <div class="section-header">
+                <div class="section-title">Material de la sesión uno</div>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <span class="meta">Presentación</span>
+                    <h3>Sesión 1 · Excel Básico</h3>
+                    <p>Contenido general del curso, objetivos, cronograma y conceptos clave de la primera clase.</p>
+                    <a href="sesion1/sesion.html" target="_blank" class="btn btn-primary">Abrir presentación</a>
+                </article>
+
+                <article class="card">
+                    <span class="meta">Temario</span>
+                    <h3>Programa completo del curso</h3>
+                    <p>Se abordan conceptos de limpieza, validación, tablas, fórmulas, reportes y temas avanzados.</p>
+                    <a href="temario.html" class="btn">Ver temario</a>
+                </article>
+
+                <article class="card">
+                    <span class="meta">Herramientas</span>
+                    <h3>Atajos y tablas oficiales</h3>
+                    <p>Se revisa el uso de Excel con velocidad de teclado, tablas estructuradas, formato y alertas visuales.</p>
+                    <a href="sesion1/sesion.html" target="_blank" class="btn">Acceder al material</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="actividades">
+            <div class="section-header">
+                <div class="section-title">Actividades para descargar</div>
+            </div>
+            <ul class="download-list">
+                <li>
+                    <div>
+                        <strong>Ejercicio de ventas</strong><br />
+                        <span>Archivo de práctica para análisis de datos y tablas.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/Ejercicio_Clase1_Ventas.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Ejercicio de gastos</strong><br />
+                        <span>Dataset para limpieza, validación y reporte general.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/Ejercicio_Clase1_Gastos.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Práctica inicial</strong><br />
+                        <span>Archivo base para practicar la organización inicial de datos.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/practica%20inicial.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Práctica 1 completa</strong><br />
+                        <span>Ejercicio completo de aplicación del primer bloque del curso.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/practica%201%20completa.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Práctica 1 referencia</strong><br />
+                        <span>Archivo de apoyo con referencia para comparar resultados.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/practica1%20referencia.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Referencias caso práctica 1</strong><br />
+                        <span>Material de apoyo con referencias del caso práctico.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/Referencias%20caso%20practica%201.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Reto integrador sesión 1</strong><br />
+                        <span>Archivo con datos desordenados para limpiar, validar y reportar como ejercicio final.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/Reto_Integrador_Sesion1.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Solución del reto sesión 1</strong><br />
+                        <span>Versión resuelta con datos limpios, fórmulas y métricas de apoyo.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/Reto_Integrador_Sesion1_Solucion.xlsx" download>Descargar</a>
+                </li>
+                <li>
+                    <div>
+                        <strong>Reaf tabla básica</strong><br />
+                        <span>Hoja de trabajo para practicar tablas y fórmulas básicas.</span>
+                    </div>
+                    <a class="file-link" href="sesion1/1%20Reaf_TablaBasica.xlsx" download>Descargar</a>
+                </li>
+            </ul>
+        </section>
+
+  
+    </div>
+</body>
+</html>

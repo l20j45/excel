@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta de Capacitación - Microsoft Excel Aplicado al Trabajo</title>
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #0369a1;
+      --accent-color: #10b981;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --border-color: #e2e8f0;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      padding: 2.5rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      color: var(--secondary-color);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .meta-info {
+      text-align: right;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .grid-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      background-color: var(--bg-light);
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .info-item h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .info-item p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      border-left: 4px solid var(--secondary-color);
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: var(--bg-light);
+      color: var(--primary-color);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      font-size: 0.95rem;
+    }
+
+    .module-badge {
+      display: inline-block;
+      background-color: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .syllabus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .module-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      background-color: #ffffff;
+    }
+
+    .module-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .class-item {
+      margin-bottom: 1rem;
+    }
+
+    .class-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .class-name {
+      font-weight: 600;
+      color: var(--secondary-color);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .class-topics {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .class-topics li {
+      margin-bottom: 0.2rem;
+    }
+
+    .terms-list {
+      list-style-type: none;
+      font-size: 0.9rem;
+    }
+
+    .terms-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .terms-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0.5rem;
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+
+    .signatures {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .signature-box {
+      text-align: center;
+    }
+
+    .signature-line {
+      border-top: 1px solid var(--text-muted);
+      margin-top: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .signature-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.25rem;
+      }
+      .meta-info {
+        text-align: left;
+      }
+      .syllabus-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+
+
+    <section>
+      <h2>Estructura del Programa</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Módulo / Descripción</th>
+            <th>Sesiones</th>
+            <th>Horas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Módulo 1: Excel Nivel Básico Aplicado</strong><br>
+              Estructuración de datos, validación y formatos operativos, fórmulas esenciales, lógica y tablas dinámicas.
+            </td>
+            <td>4 clases</td>
+            <td>8 hrs</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Módulo 2: Excel Nivel Intermedio Aplicado</strong><br>
+              Búsquedas avanzadas (BUSCARX, BUSCARV), lógica anidada, tablas dinámicas avanzadas y dashboards ejecutivos.
+            </td>
+            <td>4 clases</td>
+            <td>8 hrs</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Temario del Curso</h2>
+      <div class="syllabus-grid">
+        
+        <!-- MÓDULO 1 -->
+        <div class="module-card">
+          <span class="module-badge">Módulo I</span>
+          <div class="module-title">Excel Básico Aplicado (4 Clases / 8 Horas)</div>
+          
+          <div class="class-item">
+            <div class="class-name">Clase 1: Datos Limpios y Bien Estructurados</div>
+            <ul class="class-topics">
+              <li>Navegación ágil con atajos de teclado y selección masiva.</li>
+              <li>Limpieza de datos: ESPACIOS, NOMPROPIO, Texto en columnas y Quitar duplicados.</li>
+              <li>Formato como Tabla y referencias estructuradas.</li>
+              <li>Validación de datos (listas desplegables) y Formato Condicional: alertas visuales.</li>
+            </ul>
+          </div>
+
+          <div class="class-item">
+            <div class="class-name">Clase 2: Fórmulas Esenciales y Lógica de Negocios</div>
+            <ul class="class-topics">
+              <li>Operadores matemáticos, jerarquía de cálculos y referencias absolutas ($/F4).</li>
+              <li>Funciones clave: SUMA, PROMEDIO, CONTAR, CONTARA, MAX y MIN.</li>
+              <li>Conteo y suma con un criterio: CONTAR.SI y SUMAR.SI.</li>
+              <li>Toma de decisiones: función SI y manejo de errores con SI.ERROR.</li>
+            </ul>
+          </div>
+
+          <div class="class-item">
+            <div class="class-name">Clase 3: Filtros, Ordenamiento y Tablas Dinámicas</div>
+            <ul class="class-topics">
+              <li>Ordenamiento multicriterio y filtros automáticos.</li>
+              <li>Unión de texto: concatenación y UNIRCADENAS.</li>
+              <li>Creación de Tablas Dinámicas y configuración de campos.</li>
+              <li>Análisis de métricas: sumas, conteos, % del total y agrupación de fechas.</li>
+            </ul>
+          </div>
+
+          <div class="class-item">
+            <div class="class-name">Clase 4: Gráficos, Reportes Impresos y Caso Práctico</div>
+            <ul class="class-topics">
+              <li>Gráficos ejecutivos (barras y líneas) claros y sin ruido visual.</li>
+              <li>Configuración para impresión profesional y exportación a PDF.</li>
+              <li>Taller integrador con caso real de negocio.</li>
+              <li>Evaluación práctica y validación de asistencias.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MÓDULO 2 -->
+        <div class="module-card">
+          <span class="module-badge">Módulo II</span>
+          <div class="module-title">Excel Intermedio Aplicado (4 Clases / 8 Horas)</div>
+          
+          <div class="class-item">
+            <div class="class-name">Clase 1: Búsqueda y Vinculación de Bases de Datos</div>
+            <ul class="class-topics">
+              <li>BUSCARX (XLOOKUP), INDICE/COINCIDIR y BUSCARV con coincidencia exacta/aproximada.</li>
+              <li>Manejo de errores comunes (#N/A) mediante la función SI.ERROR.</li>
+              <li>Cruce de bases de datos para consolidados operativos.</li>
+            </ul>
+          </div>
+
+          <div class="class-item">
+            <div class="class-name">Clase 2: Lógica Avanzada y Sumatorias Condicionales</div>
+            <ul class="class-topics">
+              <li>Anidación de funciones lógicas: SI combinada con Y/O.</li>
+              <li>Criterios múltiples: SUMAR.SI.CONJUNTO y CONTAR.SI.CONJUNTO.</li>
+              <li>Reglas complejas con Formato Condicional basado en fórmulas.</li>
+            </ul>
+          </div>
+
+          <div class="class-item">
+            <div class="class-name">Clase 3: Tablas Dinámicas Avanzadas</div>
+            <ul class="class-topics">
+              <li>Campos calculados y agrupación de fechas y rangos.</li>
+              <li>Segmentadores de datos (Slicers) y líneas de tiempo.</li>
+              <li>Segmentadores conectados a varias Tablas Dinámicas.</li>
+              <li>Tablero de ventas con filtros interactivos.</li>
+            </ul>
+          </div>
+
+          <div class="class-item">
+            <div class="class-name">Clase 4: Dashboard Ejecutivo Integrador</div>
+            <ul class="class-topics">
+              <li>Diseño de dashboards: indicadores (KPI), jerarquía visual y semáforos.</li>
+              <li>Gráficos combinados y armado completo a partir de una base de datos.</li>
+              <li>Validación de datos y protección básica de hojas y libros.</li>
+              <li>Evaluación práctica y entrega de constancias.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+  </div>
+
+</body>
+</html>
