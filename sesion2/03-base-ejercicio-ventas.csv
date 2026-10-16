@@ -1,0 +1,12 @@
+ID_Emp,Empleado,Departamento,Ventas_Mes,Faltas,Estatus
+EMP-01,Carlos Mendoza,Ventas,12500.00,0,Activo
+EMP-02,Ana Maria Gomez,Ventas,8400.00,1,Activo
+EMP-03,Roberto Lopez,Marketing,15000.00,0,Activo
+EMP-04,Sofia Hernandez,Ventas,3100.00,2,Inactivo
+EMP-05,Miguel Angel Torres,Ventas,11200.00,0,Activo
+EMP-06,Laura Ramirez,Administración,9400.00,0,Activo
+EMP-07,Jorge Luis Delgado,Ventas,6800.00,1,Activo
+EMP-08,Mariana Castillo,Ventas,18500.00,0,Activo
+EMP-09,Fernando Ruiz,Ventas,4200.00,3,Inactivo
+EMP-10,Patricia Morales,Marketing,13100.00,0,Activo
+
