@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitación Excel Básico - Clase 3</title>
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --accent-teal: #0d9488;
+            --accent-teal-light: #2dd4bf;
+            --accent-blue: #38bdf8;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--accent-teal);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(13, 148, 136, 0.2);
+            color: var(--accent-teal-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+            border: 1px solid var(--accent-teal);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .objective-box {
+            background-color: rgba(15, 23, 42, 0.6);
+            border-left: 3px solid var(--accent-blue);
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-card);
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #1a2332;
+            color: var(--accent-teal-light);
+            padding: 14px 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(15, 23, 42, 0.4);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card-title {
+            color: var(--accent-teal-light);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .shortcut-key {
+            background-color: #0f172a;
+            color: var(--accent-blue);
+            border: 1px solid #334155;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-weight: 700;
+        }
+
+        code {
+            background-color: #0f172a;
+            color: var(--accent-teal-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="tag">Capacitación Presencial · Clase 3 de 4 · 2 Horas</span>
+            <h1>Excel Básico Aplicado al Entorno Laboral</h1>
+            <div class="subtitle">Sesión 3: Manipulación de Texto, Filtros Avanzados e Introducción a Tablas Dinámicas</div>
+            <div class="objective-box">
+                <strong>Objetivo de la Sesión:</strong> Dominar la manipulación de cadenas de texto para estandarizar códigos de productos o nombres, filtrar listas extensas con criterios múltiples y construir las primeras Tablas Dinámicas para resumir grandes volúmenes de datos en segundos.
+            </div>
+        </header>
+
+        <section>
+            <div class="section-header">
+                <div class="section-title">Cronograma de la Sesión 3 (120 Minutos)</div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tiempo</th>
+                            <th>Duración</th>
+                            <th>Bloque / Tema</th>
+                            <th>Objetivo Práctico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>0:00 - 0:10</strong></td>
+                            <td>10 min</td>
+                            <td><strong>Repaso y Calentamiento</strong></td>
+                            <td>Revisión rápida de la Clase 2 (referencias fijas y función SI).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0:10 - 0:30</strong></td>
+                            <td>20 min</td>
+                            <td><strong>Funciones de Texto Corporativas</strong></td>
+                            <td>Estandarización de códigos e ID con <code>CONCAT</code>, <code>UNIRCADENAS</code>, <code>IZQUIERDA</code> y <code>DERECHA</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0:30 - 0:55</strong></td>
+                            <td>25 min</td>
+                            <td><strong>Segmentación, Orden y Filtros</strong></td>
+                            <td>Ordenamiento multicriterio y filtros por color, texto y rangos de valor (<span class="shortcut-key">Ctrl + Shift + L</span>).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0:55 - 1:00</strong></td>
+                            <td>5 min</td>
+                            <td><strong>Pausa Activa</strong></td>
+                            <td>Descanso breve para liberar carga mental.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1:00 - 1:25</strong></td>
+                            <td>25 min</td>
+                            <td><strong>Estructura de una Tabla Dinámica</strong></td>
+                            <td>Creación desde cero: áreas de Filas, Columnas, Valores y Filtros.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1:25 - 1:40</strong></td>
+                            <td>15 min</td>
+                            <td><strong>Métricas en Tablas Dinámicas</strong></td>
+                            <td>Cambio de funciones de resumen: Sumas, Recuentos y Porcentaje del total general.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1:40 - 1:55</strong></td>
+                            <td>15 min</td>
+                            <td><strong>Taller Práctico Integrador</strong></td>
+                            <td>Creación de un reporte ejecutivo de ventas agrupado por Vendedor y Zona.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1:55 - 2:00</strong></td>
+                            <td>5 min</td>
+                            <td><strong>Cierre y Retroalimentación</strong></td>
+                            <td>Dudas finales y preparación para la sesión de cierre/gráficos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <div class="section-title">Bloques Teóricos y Fórmulas Clave</div>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-title">1. Manipulación de Cadenas de Texto</div>
+                    <p style="font-size:0.9rem; color:var(--text-muted);">
+                        • <code>CONCAT(texto1, texto2)</code> / <code>&amp;</code>: Une valores de distintas celdas.<br>
+                        • <code>UNIRCADENAS(" ", VERDADERO, Rango)</code>: Concatena con delimitador automático.<br>
+                        • <code>IZQUIERDA(A1, 3)</code> / <code>DERECHA(A1, 4)</code>: Extrae los primeros o últimos N caracteres para obtener claves o prefijos.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">2. Filtros y Orden Multicriterio</div>
+                    <p style="font-size:0.9rem; color:var(--text-muted);">
+                        • <strong>Atajo de Filtros:</strong> <span class="shortcut-key">Ctrl + Shift + L</span> activa o desactiva filtros instantáneamente.<br>
+                        • <strong>Orden Avanzado:</strong> Ordenar primero por <em>Estatus</em> (alfabético) y luego por <em>Monto</em> (de mayor a menor).<br>
+                        • <strong>Filtros de Fecha:</strong> Filtrar automáticamente por "Este mes", "Trimestre pasado" o "Año hasta la fecha".
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">3. Las 4 Áreas de la Tabla Dinámica</div>
+                    <p style="font-size:0.9rem; color:var(--text-muted);">
+                        • <strong>Filas:</strong> Etiquetas principales verticales (ej. Nombre de Vendedor).<br>
+                        • <strong>Columnas:</strong> Desglose horizontal cruzado (ej. Estatus del pedido).<br>
+                        • <strong>Valores:</strong> Datos numéricos resumidos (Suma de montos, Conteo de pedidos).<br>
+                        • <strong>Filtros / Segmentadores:</strong> Control global del reporte.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Programa de Capacitación Corporativa In-Company · Excel Básico Aplicado
+        </footer>
+    </div>
+</body>
+</html>
